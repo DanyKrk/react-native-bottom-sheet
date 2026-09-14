@@ -8,6 +8,15 @@ using namespace facebook::react;
 
 @implementation BottomSheetSurfaceComponentView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+  if (self = [super initWithFrame:frame]) {
+    const auto &defaultProps = BottomSheetSurfaceViewShadowNode::defaultSharedProps();
+    _props = defaultProps;
+  }
+  return self;
+}
+
 + (ComponentDescriptorProvider)componentDescriptorProvider
 {
   return concreteComponentDescriptorProvider<BottomSheetSurfaceViewComponentDescriptor>();
